@@ -1,0 +1,76 @@
+<!--&lt;!&ndash;&lt;!&ndash; postsdirty.component.html &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;<div *ngFor="let post of postsdirty">&ndash;&gt;-->
+<!--&lt;!&ndash;  <h2>{{ post.title }}</h2>&ndash;&gt;-->
+<!--&lt;!&ndash;  <a [href]="post.url" target="_blank">View Post</a>&ndash;&gt;-->
+<!--&lt;!&ndash;  <p *ngIf="post.content">{{ post.content }}</p>&ndash;&gt;-->
+<!--&lt;!&ndash;  <hr>&ndash;&gt;-->
+<!--&lt;!&ndash;</div>&ndash;&gt;-->
+<!--&lt;!&ndash; postsdirty.component.html &ndash;&gt;-->
+<!--<div class="card-container">-->
+<!--  <div class="card" *ngFor="let post of postsdirty">-->
+<!--    <div class="card-header">-->
+<!--      <h2>{{ post.title }}</h2>-->
+<!--    </div>-->
+<!--    <div class="card-body">-->
+<!--      <p *ngIf="post.content">{{ post.content }}</p>-->
+<!--    </div>-->
+<!--    <div class="card-footer">-->
+<!--      <a [href]="post.url" target="_blank">View Post</a>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!-- postsdirty.component.html -->
+<!--<form [formGroup]="topicForm" (ngSubmit)="onSubmit()">-->
+<!--  <div>-->
+<!--    <label for="topic">Topic:</label>-->
+<!--    <input id="topic" formControlName="topic" placeholder="Enter topic (e.g., tech)" required />-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <label for="timeFrame">Time Frame:</label>-->
+<!--    <select id="timeFrame" formControlName="timeFrame">-->
+<!--      <option value="hour">Past Hour</option>-->
+<!--      <option value="day">Past Day</option>-->
+<!--      <option value="week">Past Week</option>-->
+<!--      <option value="month">Past Month</option>-->
+<!--      <option value="year">Past Year</option>-->
+<!--      <option value="all">All Time</option>-->
+<!--    </select>-->
+<!--  </div>-->
+<!--  <div>-->
+<!--    <label for="count">Post Count:</label>-->
+<!--    <input id="count" type="number" formControlName="count" placeholder="Number of posts" required />-->
+<!--  </div>-->
+<!--  <button type="submit">Submit</button>-->
+<!--</form>-->
+
+<!--<div class="search-container">-->
+<!--  <input-->
+<!--    type="text"-->
+<!--    [(ngModel)]="searchQuery"-->
+<!--    (input)="searchPosts()"-->
+<!--    placeholder="Search posts..."-->
+<!--  />-->
+<!--</div>-->
+
+<div class="card-container">
+  <div class="card" *ngFor="let post of posts">
+    <div class="card-header">
+      <h2>{{ post.title }}</h2>
+    </div>
+    <div class="card-body">
+      <p *ngIf="post.content">{{ post.content }}</p>
+    </div>
+    <div class="card-footer">
+      <a [href]="post.url" target="_blank">View Post</a>
+      <div class="post-stats">
+        <span>{{ post.commentCount }} comments</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<div class="pagination">-->
+<!--  <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>-->
+<!--  <span>Page {{ currentPage }} of {{ Math.ceil(filteredPosts.length / postsPerPage) }}</span>-->
+<!--  <button (click)="nextPage()" [disabled]="currentPage * postsPerPage >= filteredPosts.length">Next</button>-->
+<!--</div>-->
